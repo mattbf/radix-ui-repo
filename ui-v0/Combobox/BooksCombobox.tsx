@@ -65,7 +65,7 @@ function queryData(data: DataObject[], inputValue: string): DataObject[] {
   }
 }
 
-const BooksComboxbox = () => {
+const BooksComboxbox: React.FC = () => {
   const [items, setItems] = useState<DataObject[]>(books);
   const [selectedItem, setSelectedItem] = useState<
     DataObject | null | undefined
@@ -92,6 +92,7 @@ const BooksComboxbox = () => {
       setSelectedItem(newSelectedItem);
     },
   });
+
   const globalIndexSelected =
     books.findIndex((b) => b.id === selectedItem?.id) % 10;
   const selectedEntityColor = INDEX_TO_TAILWIND_BG[globalIndexSelected];
@@ -135,43 +136,42 @@ const BooksComboxbox = () => {
           </div>
         </PopoverTrigger>
         <PopoverContent
+          className="p-0 w-[var(--radix-popover-trigger-width)] max-h-[--radix-popover-content-available-height]"
           side="bottom"
           align="center"
           sideOffset={-34}
-          className={`p-0 w-[var(--radix-popover-trigger-width)] max-h-[--radix-popover-content-available-height] ${
-            !isOpen && 'hidden'
-          }`}
-          // forceMountPortal
         >
           <div
             className={cn(
               { hidden: !isOpen },
-              'w-full overflow-hidden bg-surface-primary text-text-foreground',
+              'w-full overflow-hiddenbg-surface-primary text-text-foreground',
             )}
           >
             <div>
               <input
                 className="px-4 py-2 bg-transparent flex flex-row items-center placeholder-text-quaternary w-full rounded-none border-b border-stroke-secondary outline-none tracking-[0.0075rem] leading-[1.45rem] font-[300] text-sm"
                 placeholder="Search Entities"
-                {...getInputProps({
-                  onFocus() {
-                    if (inputValue !== '') {
-                      setInputValue('');
-                    }
+                {...getInputProps(
+                  {
+                    onFocus() {
+                      if (inputValue !== '') {
+                        setInputValue('');
+                      }
+                    },
                   },
-                })}
+                  { suppressRefError: true },
+                )}
               />
-              <ul {...getMenuProps()} className="p-1 max-h-48 overflow-y-auto">
+              <ul
+                {...getMenuProps({ suppressRefError: true })}
+                className="p-1 max-h-48 overflow-y-auto"
+              >
                 {items.map((item, i) => {
                   const globalIndex =
                     books.findIndex((b) => b.id === item.id) % 10;
                   const entityColor = INDEX_TO_TAILWIND_BG[globalIndex];
                   //highlight the search term
-                  const sanitizedInput = inputValue.replace(
-                    /[.*+?^${}()|[\]\\]/g,
-                    '\\$&',
-                  );
-                  const regex = new RegExp(sanitizedInput, 'gi');
+                  const regex = new RegExp(inputValue, 'gi');
                   const parts = item.title.split(regex) ?? [item.title ?? ''];
                   const highlightedParts = item.title.match(regex);
 
@@ -185,7 +185,7 @@ const BooksComboxbox = () => {
                       key={`${item.title}${i}`}
                       {...getItemProps({ item, i })}
                     >
-                      <div className="flex flex-row truncate items-center grow gap-2 shrink min-w-0">
+                      <div className="flex flex-row items-center grow gap-2 shrink min-w-0">
                         {item.id === 'new-entity' ? (
                           <Plus size={10} className="shrink-0" />
                         ) : (

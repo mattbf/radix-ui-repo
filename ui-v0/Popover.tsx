@@ -12,7 +12,7 @@ const popoverVariants = cva(
       variant: {
         default: '',
         tooltip:
-          'z-[9999] overflow-hidden rounded-md border bg-graphite-900 text-white shadow-sm',
+          'z-[9999] overflow-hidden rounded-md border bg-graphite-900 text-white shadow-sm animate-in fade-in-0 zoom-in-95',
       },
       size: {
         sm: '',
@@ -43,16 +43,11 @@ const popoverVariants = cva(
 type PopoverProps = {
   size?: string;
 } & React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> &
-  VariantProps<typeof popoverVariants> & {
-    forceMountPortal?: true | undefined;
-    noPortal?: true | undefined;
-  };
+  VariantProps<typeof popoverVariants>;
 
 const Popover = PopoverPrimitive.Root;
 
 const PopoverTrigger = PopoverPrimitive.Trigger;
-
-const PopoverAnchor = PopoverPrimitive.Anchor;
 
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
@@ -66,38 +61,22 @@ const PopoverContent = React.forwardRef<
       align = 'center',
       side = 'bottom',
       sideOffset = 4,
-      forceMountPortal,
-      noPortal,
       ...props
     },
     ref,
-  ) => {
-    if (noPortal) {
-      return (
-        <PopoverPrimitive.Content
-          ref={ref}
-          align={align}
-          side={side}
-          sideOffset={sideOffset}
-          className={cn(popoverVariants({ variant, size, className }))}
-          {...props}
-        />
-      );
-    }
-    return (
-      <PopoverPrimitive.Portal forceMount={forceMountPortal}>
-        <PopoverPrimitive.Content
-          ref={ref}
-          align={align}
-          side={side}
-          sideOffset={sideOffset}
-          className={cn(popoverVariants({ variant, size, className }))}
-          {...props}
-        />
-      </PopoverPrimitive.Portal>
-    );
-  },
+  ) => (
+    <PopoverPrimitive.Portal>
+      <PopoverPrimitive.Content
+        ref={ref}
+        align={align}
+        side={side}
+        sideOffset={sideOffset}
+        className={cn(popoverVariants({ variant, size, className }))}
+        {...props}
+      />
+    </PopoverPrimitive.Portal>
+  ),
 );
 PopoverContent.displayName = PopoverPrimitive.Content.displayName;
 
-export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor };
+export { Popover, PopoverTrigger, PopoverContent };

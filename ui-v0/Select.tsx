@@ -5,11 +5,6 @@ import React, { ReactNode } from 'react';
 import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/utils';
 
-export type BasicOption = {
-  title: string;
-  value: string;
-};
-
 const selectVariants = cva(
   [
     'gap-x-[0.375rem] pl-[0.75rem] pr-[0.5rem] min-w-[6rem]',
@@ -22,8 +17,7 @@ const selectVariants = cva(
         default: '',
       },
       size: {
-        sm: 'h-[2rem] text-sm',
-        md: 'h-[2.5rem]',
+        md: '',
         lg: 'h-[3rem]',
         xl: 'h-[3.5rem]',
       },
@@ -75,14 +69,14 @@ const Select = React.forwardRef<HTMLSelectElement, DefaultComponentProps>(
 
     return (
       <div className={cn({ 'w-full': fullWidth }, 'flex flex-col gap-y-2')}>
-        {label && (
-          <div className="flex flex-row gap-1 items-center">
+        <div className="flex flex-row gap-1 items-center">
+          {label && (
             <Text variant="label" size="sm" className="text-text-primary">
               {label}
             </Text>
-            {LabelIcon && LabelIcon}
-          </div>
-        )}
+          )}
+          {LabelIcon && LabelIcon}
+        </div>
         <div
           className={cn(
             { 'w-full': fullWidth },

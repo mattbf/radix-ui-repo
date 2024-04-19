@@ -7,7 +7,7 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const tooltipVariants = cva(
-  'z-50 overflow-hidden rounded-md border-0 bg-graphite-900 text-white shadow-sm animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+  'z-50 overflow-hidden rounded-md border bg-graphite-900 text-white shadow-sm animate-in fade-in-0 zoom-in-95 data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade will-change-[transform,opacity]',
   {
     variants: {
       size: {
@@ -27,7 +27,6 @@ type TooltipProps = {
   VariantProps<typeof tooltipVariants>;
 
 const TooltipProvider = TooltipPrimitive.Provider;
-const TooltipPortal = TooltipPrimitive.Portal;
 
 const Tooltip = TooltipPrimitive.Root;
 
@@ -46,10 +45,4 @@ const TooltipContent = React.forwardRef<
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-  TooltipProvider,
-  TooltipPortal,
-};
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };

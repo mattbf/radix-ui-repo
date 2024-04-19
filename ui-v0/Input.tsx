@@ -39,16 +39,11 @@ type InputProps = {
   fullWidth?: boolean;
   leftIcon?: IconType;
   rightIcon?: IconType;
-  showOptional?: boolean;
-  iconClassName?: string;
-  mask?: { pattern: RegExp; maxLength: number } | undefined;
 };
 
 type DefaultComponentProps = React.PropsWithChildren<InputProps> &
   VariantProps<typeof inputVariants> &
   Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof InputProps>;
-
-export type InputUIProps = DefaultComponentProps;
 
 const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
   (
@@ -65,9 +60,6 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
       label,
       labelIcon: LabelIcon,
       fullWidth = false,
-      showOptional,
-      mask,
-      iconClassName,
       ...props
     },
     ref,
@@ -81,11 +73,6 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
             <Text variant="label" size="sm" className="text-text-primary">
               {label}
             </Text>
-            {showOptional ? (
-              <Text variant="label" size="sm" className="text-text-secondary">
-                (optional)
-              </Text>
-            ) : null}
             {LabelIcon && LabelIcon}
           </div>
         )}
@@ -109,7 +96,7 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
               size={iconSize}
               weight="bold"
               color="currentColor"
-              className={cn('text-text-secondary', iconClassName)}
+              className="text-text-secondary"
             />
           )}
           <input
@@ -125,7 +112,7 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
               size={iconSize}
               weight="bold"
               color="currentColor"
-              className={cn('text-text-secondary', iconClassName)}
+              className="text-text-secondary"
             />
           )}
         </div>

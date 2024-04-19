@@ -4,7 +4,6 @@ import * as React from 'react';
 
 import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/utils';
-import { ReactNode } from 'react';
 
 const alertVariants = cva(
   'relative w-full rounded-md border p-[1rem] pl-[1.25rem] gap-[0.75rem] flex flex-row items-start gap-[0.75rem]',
@@ -34,7 +33,7 @@ const VARIANT_TO_ICON_COLOR: { [key: string]: string } = {
 
 type AlertProps = {
   title?: string;
-  description?: string | ReactNode;
+  description?: string;
   icon?: IconType;
 } & React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof alertVariants>;
@@ -62,7 +61,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             {title}
           </Text>
         )}
-        {description && typeof description === 'string' ? (
+        {description && (
           <Text
             variant="body"
             size="sm"
@@ -70,9 +69,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           >
             {description}
           </Text>
-        ) : description ? (
-          description
-        ) : null}
+        )}
       </div>
       {children}
     </div>

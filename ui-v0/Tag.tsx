@@ -13,7 +13,6 @@ const tagVariants = cva(
       },
       size: {
         default: 'h-[1.375rem] py-[0.625rem] px-[0.5rem] text-xs',
-        xs: 'h-[1rem] py-[0.5rem] px-[0.25rem] text-[12px]',
         sm: 'h-[1.125rem] py-[0.625rem] px-[0.375rem] text-xs',
         md: 'h-[1.375rem] py-[0.625rem] px-[0.5rem] text-xs',
         lg: 'h-[1.75rem] p-[0.625rem] text-sm',

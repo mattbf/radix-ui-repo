@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
 const modalVariants = cva(
-  'outline-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[99] overflow-hidden flex flex-col w-full gap-4 bg-surface-primary shadow-xl rounded-xl border border-stroke-secondary duration-100 data-[state=closed]:duration-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]',
+  'outline-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[99] overflow-hidden flex flex-col w-full gap-4 bg-surface-primary shadow-xl rounded-xl border border-stroke-secondary duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]',
   {
     variants: {
       variant: {
@@ -16,9 +16,7 @@ const modalVariants = cva(
       },
       size: {
         sm: 'max-w-[90%] md:max-w-[500px] max-h-[90%]',
-        schmedium: 'max-w-[90%] md:max-w-[650px] max-h-[90%]',
-        md: 'max-w-[90%] w-[900px] max-h-[90%]',
-        lg: 'max-w-[90%] w-[1200px] max-h-[90%]',
+        md: 'max-w-[90%] md:max-w-[900px] max-h-[90%]',
         fullScreen: 'max-w-[90%] md:max-w-[95%] max-h-[90%]',
       },
     },
@@ -36,7 +34,6 @@ const modalBodyVariants = cva('min-w-0 px-[2.5rem] py-[1.5rem]', {
     size: {
       sm: 'w-full',
       md: 'w-full',
-      lg: 'w-full',
       fullScreen: 'w-full max-w-[440px]',
     },
   },
@@ -61,7 +58,7 @@ const ModalOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      'fixed inset-0 z-[99] bg-modal-background backdrop-blur-xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+      'fixed inset-0 z-[99] bg-modal-background backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       className,
     )}
     style={{ backdropFilter: 'blur(0.25rem)' }}
@@ -100,6 +97,29 @@ interface ModalProps
   hideClose?: boolean;
   allowScrollOverlay?: boolean;
 }
+// export const Overlay2 = styled.div({
+//   '@media screen and (prefers-reduced-motion: reduce)': {
+//     '&[dataState="closed"]': {
+//       animation: 'none',
+//     },
+//   },
+//   '&[data-state="closed"]': {
+//     animation: `${FadeFromTo({ from: 0.75, to: 0 })} 200ms ease-in`,
+//   },
+//   '@media screen and (prefers-reduced-motion: reduce)': {
+//     '&[dataState="open"]': {
+//       animation: 'none',
+//     },
+//   },
+//   '&[data-state="open"]': {
+//     animation: `${FadeFromTo({ from: 0, to: 0.75 })} 300ms ease-out`,
+//   },
+//   backgroundColor: theme.color.gray['500'],
+//   inset: 0,
+//   opacity: 0.75,
+//   position: 'fixed',
+//   zIndex: 10002,
+// });
 const OverlayAllowScroll = () => (
   <div
     className="fixed inset-0 z-[99] bg-modal-background backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"

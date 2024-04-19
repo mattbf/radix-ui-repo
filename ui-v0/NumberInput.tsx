@@ -1,14 +1,15 @@
 import { type Icon as IconType } from '@phosphor-icons/react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/utils';
 
 const inputVariants = cva(
   [
-    'gap-x-[0.375rem] pl-[0.75rem] pr-[0.5rem] min-w-[6rem]',
-    'flex flex-row items-center overflow-hidden transition-colors text-text-primary tracking-[0.0075rem] leading-[1.45rem] font-[300] text-base py-0 h-[2.5rem] rounded-md border focus-within:bg-surface-primary placeholder-text-quaternary disabled-within:bg-black-alpha-50',
+    'gap-x-[0.375rem] pl-[0.75rem] pr-[0.5rem] min-w-[6rem] caret-evergreen-700',
+    'flex flex-row items-center overflow-hidden transition-colors text-text-primary py-2  border-b focus-within:bg-surface-primary placeholder-text-quaternary disabled-within:bg-black-alpha-50',
+    'text-4xl tracking-[-0.05rem] leading-[2.875rem] font-[400]',
   ],
   {
     variants: {
@@ -16,7 +17,6 @@ const inputVariants = cva(
         default: '',
       },
       size: {
-        sm: 'h-[2rem] text-sm',
         md: '',
         lg: 'h-[3rem]',
         xl: 'h-[3.5rem]',
@@ -28,29 +28,24 @@ const inputVariants = cva(
     },
   },
 );
+
 type InputProps = {
   size?: string;
   error?: boolean;
   errorMessage?: string;
   label?: string;
-  labelIcon?: ReactNode;
   infoMessage?: string;
   inputClassName?: string;
   fullWidth?: boolean;
   leftIcon?: IconType;
   rightIcon?: IconType;
-  showOptional?: boolean;
-  iconClassName?: string;
-  mask?: { pattern: RegExp; maxLength: number } | undefined;
 };
 
 type DefaultComponentProps = React.PropsWithChildren<InputProps> &
   VariantProps<typeof inputVariants> &
   Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof InputProps>;
 
-export type InputUIProps = DefaultComponentProps;
-
-const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
+const NumberInput = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
   (
     {
       className,
@@ -63,11 +58,8 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
       infoMessage,
       inputClassName,
       label,
-      labelIcon: LabelIcon,
+      autoFocus = true,
       fullWidth = false,
-      showOptional,
-      mask,
-      iconClassName,
       ...props
     },
     ref,
@@ -77,24 +69,16 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
     return (
       <div className={cn({ 'w-full': fullWidth }, 'flex flex-col gap-y-2')}>
         {label && (
-          <div className="flex flex-row gap-1 items-center">
-            <Text variant="label" size="sm" className="text-text-primary">
-              {label}
-            </Text>
-            {showOptional ? (
-              <Text variant="label" size="sm" className="text-text-secondary">
-                (optional)
-              </Text>
-            ) : null}
-            {LabelIcon && LabelIcon}
-          </div>
+          <Text variant="label" size="sm" className="text-text-primary">
+            {label}
+          </Text>
         )}
         <div
           className={cn(
             { 'w-full': fullWidth },
             { 'border-error-red-700': error || !!errorMessage },
             {
-              'border-stroke-secondary hover:border-stroke-primary focus-within:border-evergreen-700 hover:focus-within:border-evergreen-700 focus-within:shadow-[0_0px_0px_1px_#3E7B52] hover:focus-within:shadow-[0_0px_0px_1px_#3E7B52]':
+              'border-stroke-secondary hover:border-stroke-primary focus-within:border-evergreen-700 hover:focus-within:border-evergreen-700':
                 !error && errorMessage === undefined,
             },
             inputVariants({
@@ -109,23 +93,28 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
               size={iconSize}
               weight="bold"
               color="currentColor"
-              className={cn('text-text-secondary', iconClassName)}
+              className="text-text-secondary"
             />
           )}
+          <Text variant="headline" size="4xl">
+            $
+          </Text>
           <input
             ref={ref}
-            {...props}
+            autoFocus={autoFocus}
+            placeholder="0.00"
             className={cn(
               'outline-none w-full h-full bg-transparent',
               inputClassName,
             )}
+            {...props}
           />
           {RightIcon && (
             <RightIcon
               size={iconSize}
               weight="bold"
               color="currentColor"
-              className={cn('text-text-secondary', iconClassName)}
+              className="text-text-secondary"
             />
           )}
         </div>
@@ -143,6 +132,6 @@ const Input = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
     );
   },
 );
-Input.displayName = 'Input';
+NumberInput.displayName = 'NumberInput';
 
-export { Input };
+export { NumberInput };

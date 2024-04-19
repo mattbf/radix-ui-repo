@@ -18,16 +18,12 @@ const buttonVariants = cva(
         ghost:
           'text-text-primary shadow-none border-none bg-transparent hover:bg-surface-hover',
         link: 'text-text-primary shadow-none underline-offset-4 hover:underline',
-        text: 'shadow-none',
       },
       size: {
-        xs: 'h-[1.5rem] px-[0.5rem] text-sm',
         sm: 'h-[2rem] px-[0.875rem]',
         md: 'h-[2.5rem] px-[1.125rem]',
         lg: 'h-[3rem] px-[1.25rem] text-base',
         xl: 'h-[3.5rem] px-[1.5rem] text-base',
-        'icon-xs':
-          'h-[1.5rem] w-[1.5rem] min-h-[1.5rem] min-w-[1.5rem] text-sm',
         'icon-sm': 'h-[2rem] w-[2rem] min-h-[2rem] min-w-[2rem]',
         'icon-md': 'h-[2.5rem] w-[2.5rem] min-h-[2.5rem] min-w-[2.5rem]',
         'icon-default': 'h-[2.5rem] w-[2.5rem] min-h-[2.5rem] min-w-[2.5rem]',
@@ -47,12 +43,6 @@ const buttonVariants = cva(
       size: 'md',
       color: 'default',
     },
-    compoundVariants: [
-      {
-        variant: 'text',
-        className: 'px-0 h-auto gap-1',
-      },
-    ],
   },
 );
 
@@ -88,29 +78,25 @@ const Button = React.forwardRef<HTMLButtonElement, DefaultComponentProps>(
   ) => {
     const Comp = asChild ? Slot : 'button';
     const iconSize =
-      propSize === 'xs'
-        ? 12
-        : propSize === 'md' || propSize === 'sm'
-          ? 14
-          : propSize === 'lg'
-            ? 18
-            : propSize === 'xl'
-              ? 20
-              : 16;
+      propSize === 'md' || propSize === 'sm'
+        ? 14
+        : propSize === 'lg'
+        ? 18
+        : propSize === 'xl'
+        ? 20
+        : 16;
     const isIconButton =
       (!props.children || asChild) && (LeftIcon || RightIcon) ? true : false;
     const size = isIconButton
-      ? propSize === 'xs'
-        ? 'icon-xs'
-        : propSize === 'sm'
-          ? 'icon-sm'
-          : propSize === 'md'
-            ? 'icon-md'
-            : propSize === 'lg'
-              ? 'icon-lg'
-              : propSize === 'xl'
-                ? 'icon-xl'
-                : 'icon-default'
+      ? propSize === 'sm'
+        ? 'icon-sm'
+        : propSize === 'md'
+        ? 'icon-md'
+        : propSize === 'lg'
+        ? 'icon-lg'
+        : propSize === 'xl'
+        ? 'icon-xl'
+        : 'icon-default'
       : propSize;
 
     return (
@@ -129,13 +115,10 @@ const Button = React.forwardRef<HTMLButtonElement, DefaultComponentProps>(
         {...props}
       >
         {loading ? (
-          <>
-            <LoadingSpinner
-              size={propSize?.slice()}
-              color={variant === 'ghost' || variant === 'outline' ? 'dark' : ''}
-            />
-            {props.children}
-          </>
+          <LoadingSpinner
+            size={propSize?.slice()}
+            color={variant === 'ghost' || variant === 'outline' ? 'dark' : ''}
+          />
         ) : (
           <>
             {LeftIcon && (
