@@ -8,15 +8,15 @@ import { LoadingSpinner } from './Loading/LoadingSpinner';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'select-none focus:outline-none inline-flex items-center justify-center whitespace-nowrap gap-2 shadow-lg rounded-md text-sm font-medium ring-offset-evergreen-500 transition-colors text-sm tracking-[0.00656rem] leading-[1.26875rem] font-[450] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:bg-opacity-40',
+  'select-none focus:outline-none inline-flex items-center justify-center whitespace-nowrap gap-2 shadow-lg rounded-md text-sm font-medium ring-offset-lime-500 transition-colors text-sm tracking-[0.00656rem] leading-[1.26875rem] font-[450] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:bg-opacity-40',
   {
     variants: {
       variant: {
-        default: 'bg-evergreen-700 text-foreground hover:bg-evergreen-900',
+        default: 'bg-lime-700 text-foreground hover:bg-lime-900',
         outline:
-          'text-text-primary shadow-none border border-stroke-secondary bg-transparent hover:bg-surface-hover disabled:opacity-40',
+          'text-text-primary shadow-none border border-gray-300 bg-transparent hover:bg-gray-200 disabled:opacity-40',
         ghost:
-          'text-text-primary shadow-none border-none bg-transparent hover:bg-surface-hover',
+          'text-text-primary shadow-none border-none bg-transparent hover:bg-gray-200',
         link: 'text-text-primary shadow-none underline-offset-4 hover:underline',
       },
       size: {
@@ -32,7 +32,7 @@ const buttonVariants = cva(
       },
       color: {
         default: '',
-        'dark-green': 'bg-evergreen-900 hover:bg-evergreen-950',
+        'dark-green': 'bg-lime-900 hover:bg-lime-950',
         black: 'bg-text-primary hover:bg-graphite-950',
         white: 'bg-white text-text-primary hover:bg-surface-white-hover',
         error: 'bg-error-red-700 text-white hover:bg-error-red-900',

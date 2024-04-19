@@ -25,27 +25,27 @@ const TabsList = React.forwardRef<
 TabsList.displayName = TabsPrimitive.List.displayName;
 
 const TAB_ACCENT_COLOR_CLASS: { [key: string]: string } = {
-  'evergreen-light': 'bg-evergreen-500',
-  lavender: 'bg-lavender-700',
-  sandstone: 'bg-sandstone-700',
+  'lime-light': 'bg-lime-500',
+  purple: 'bg-purple-700',
+  orange: 'bg-orange-700',
   black: 'bg-black-700',
   gold: 'bg-gold-700',
   tomato: 'bg-tomato-700',
-  blue: 'bg-baby-blue-700',
+  blue: 'bg-blue-700',
 };
 const defaultTabButtonVariants = cva(
   'flex flex-row items-center gap-2 transition-colors select-none focus:outline-none h-[2.5rem] px-[0.5rem] mb-[0.625rem] rounded-md disabled:pointer-events-none disabled:bg-opacity-40',
   {
     variants: {
       variant: {
-        default: 'group-data-[state=inactive]:hover:bg-surface-hover',
+        default: 'group-data-[state=inactive]:hover:bg-gray-200',
       },
       tabAccentColor: {
         default: '',
         black: '',
-        'evergreen-light': '',
-        sandstone: '',
-        lavender: '',
+        'lime-light': '',
+        orange: '',
+        purple: '',
       },
     },
     defaultVariants: {
@@ -59,14 +59,14 @@ const defaultTabButtonWrapperVariants = cva(
   {
     variants: {
       variant: {
-        default: 'group-data-[state=active]:border-evergreen-700',
+        default: 'group-data-[state=active]:border-lime-700',
       },
       tabAccentColor: {
         default: '',
         black: 'group-data-[state=active]:border-black',
-        'evergreen-light': 'group-data-[state=active]:border-evergreen-500',
-        sandstone: 'group-data-[state=active]:border-sandstone-700',
-        lavender: 'group-data-[state=active]:border-lavender-700',
+        'lime-light': 'group-data-[state=active]:border-lime-500',
+        orange: 'group-data-[state=active]:border-orange-700',
+        purple: 'group-data-[state=active]:border-purple-700',
       },
     },
     defaultVariants: {

@@ -10,9 +10,9 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-evergreen-25 border-evergreen-75 text-text-primary',
+        default: 'bg-lime-25 border-lime-75 text-text-primary',
         success:
-          'bg-success-green-25 border-success-green-75 text-success-green-900',
+          'bg-green-25 border-green-75 text-green-900',
         warning:
           'bg-warning-yellow-25 border-warning-yellow-75 text-warning-yellow-900',
         error: 'bg-error-red-25 border-error-red-75 text-error-red-900',
@@ -26,7 +26,7 @@ const alertVariants = cva(
 
 const VARIANT_TO_ICON_COLOR: { [key: string]: string } = {
   default: 'text-text-secondary',
-  success: 'text-success-green-700',
+  success: 'text-green-700',
   warning: 'text-warning-yellow-700',
   error: 'text-error-red-700',
 };

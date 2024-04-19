@@ -8,7 +8,7 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const checkboxVariants = cva(
-  'peer shrink-0 shadow-md rounded-md border border-stroke-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-evergreen-700 data-[state=checked]:text-white',
+  'peer shrink-0 shadow-md rounded-md border border-gray-400 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-lime-700 data-[state=checked]:text-white',
   {
     variants: {
       size: {

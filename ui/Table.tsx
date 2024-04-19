@@ -23,7 +23,7 @@ const TableHeader = React.forwardRef<
   <thead
     ref={ref}
     className={cn(
-      '[&_tr]:border-b-[0.5px] [&_tr]:border-stroke-secondary',
+      '[&_tr]:border-b-[0.5px] [&_tr]:border-gray-300',
       className,
     )}
     {...props}
@@ -50,7 +50,7 @@ const TableFooter = React.forwardRef<
   <tfoot
     ref={ref}
     className={cn(
-      'border-t-[0.5px] border-stroke-secondary [&>tr]:last:border-b-0',
+      'border-t-[0.5px] border-gray-300 [&>tr]:last:border-b-0',
       className,
     )}
     {...props}
@@ -65,7 +65,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      'border-b-[0.5px] border-stroke-secondary transition-colors data-[state=selected]:bg-surface-hover',
+      'border-b-[0.5px] border-gray-300 transition-colors data-[state=selected]:bg-gray-200',
       className,
     )}
     {...props}

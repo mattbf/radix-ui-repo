@@ -5,11 +5,11 @@ import { cn } from '@/lib/utils';
 const skeletonVariants = cva('rounded-md', {
   variants: {
     variant: {
-      default: 'bg-surface-hover animate-pulse',
+      default: 'bg-gray-200 animate-pulse',
       outline:
-        'text-text-primary shadow-none border border-stroke-secondary bg-transparent hover:bg-surface-hover',
+        'text-text-primary shadow-none border border-gray-300 bg-transparent hover:bg-gray-200',
       ghost:
-        'text-text-primary shadow-none border-none bg-transparent hover:bg-surface-hover',
+        'text-text-primary shadow-none border-none bg-transparent hover:bg-gray-200',
       link: 'text-text-primary shadow-none underline-offset-4 hover:underline',
     },
     size: {

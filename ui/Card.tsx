@@ -4,7 +4,7 @@ import React, { HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
 const cardVariants = cva(
-  'px-8 py-[1.75rem] flex flex-col gap-3 border border-stroke-secondary surface-primary rounded-lg',
+  'px-8 py-[1.75rem] flex flex-col gap-3 border border-gray-300 yellow-50 rounded-lg',
   {
     variants: {
       variant: {

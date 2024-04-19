@@ -7,7 +7,7 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const switchVariants = cva(
-  'peer px-[0.125rem] inline-flex  shrink-0 cursor-pointer items-center rounded-full border-[0.5px] border-stroke-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=unchecked]:bg-graphite-75',
+  'peer px-[0.125rem] inline-flex  shrink-0 cursor-pointer items-center rounded-full border-[0.5px] border-gray-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=unchecked]:bg-graphite-75',
   {
     variants: {
       size: {
@@ -17,7 +17,7 @@ const switchVariants = cva(
       },
       color: {
         black: 'data-[state=checked]:bg-text-primary',
-        green: 'data-[state=checked]:bg-evergreen-700',
+        green: 'data-[state=checked]:bg-lime-700',
       },
     },
     defaultVariants: {
@@ -27,7 +27,7 @@ const switchVariants = cva(
   },
 );
 const switchThumbVariants = cva(
-  'pointer-events-none block rounded-full bg-white border-[0.25px] border-stroke-primary shadow-lg ring-0 transition-transform',
+  'pointer-events-none block rounded-full bg-white border-[0.25px] border-gray-400 shadow-lg ring-0 transition-transform',
   {
     variants: {
       size: {

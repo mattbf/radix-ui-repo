@@ -40,7 +40,7 @@ function SelectButton({
   };
   return (
     <DropdownMenu>
-      <div className="truncate flex flex-row items-center rounded-md border border-stroke-secondary">
+      <div className="truncate flex flex-row items-center rounded-md border border-gray-300">
         <Text
           variant="label"
           size="sm"
@@ -65,7 +65,7 @@ function SelectButton({
             size="sm"
             rightIcon={CaretDown}
             variant="outline"
-            className="rounded-none border-l-stroke-secondary border-y-transparent border-r-transparent"
+            className="rounded-none border-l-gray-300 border-y-transparent border-r-transparent"
           >
             {selected?.title}
           </Button>

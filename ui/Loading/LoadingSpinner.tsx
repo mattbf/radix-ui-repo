@@ -22,7 +22,7 @@ export const LoadingSpinner = ({
       <svg
         aria-hidden="true"
         className={cn(
-          `inline text-surface-hover animate-spin ${colorClass} ${sizeClass}`,
+          `inline text-gray-200 animate-spin ${colorClass} ${sizeClass}`,
           className,
         )}
         viewBox="0 0 100 101"

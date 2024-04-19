@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
 const modalVariants = cva(
-  'outline-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[99] overflow-hidden flex flex-col w-full gap-4 bg-surface-primary shadow-xl rounded-xl border border-stroke-secondary duration-100 data-[state=closed]:duration-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]',
+  'outline-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[99] overflow-hidden flex flex-col w-full gap-4 bg-yellow-50 shadow-xl rounded-xl border border-gray-300 duration-100 data-[state=closed]:duration-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]',
   {
     variants: {
       variant: {
@@ -159,7 +159,7 @@ const ModalHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      'flex flex-col w-full gap-y-[0.75rem] items-start px-[2.5rem] pt-[2rem] pb-[1.5rem] border-b-[0.5px] border-stroke-secondary grow-0',
+      'flex flex-col w-full gap-y-[0.75rem] items-start px-[2.5rem] pt-[2rem] pb-[1.5rem] border-b-[0.5px] border-gray-300 grow-0',
       className,
     )}
     {...props}

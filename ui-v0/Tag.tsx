@@ -8,8 +8,8 @@ const tagVariants = cva(
   {
     variants: {
       variant: {
-        default: 'text-foreground text-evergreen-700',
-        outline: 'shadow-none border border-stroke-secondary',
+        default: 'text-foreground text-lime-700',
+        outline: 'shadow-none border border-gray-300',
       },
       size: {
         default: 'h-[1.375rem] py-[0.625rem] px-[0.5rem] text-xs',
@@ -18,18 +18,18 @@ const tagVariants = cva(
         lg: 'h-[1.75rem] p-[0.625rem] text-sm',
       },
       color: {
-        default: 'bg-evergreen-50 text-evergreen-700',
-        'dark-green': 'bg-evergreen-700 text-white',
+        default: 'bg-lime-50 text-lime-700',
+        'dark-green': 'bg-lime-700 text-white',
         black: 'bg-text-primary text-white',
         white: 'bg-white text-text-secondary',
-        blue: 'bg-baby-blue-50 text-baby-blue-700',
-        'dark-blue': 'bg-baby-blue-700 text-white',
+        blue: 'bg-blue-50 text-blue-700',
+        'dark-blue': 'bg-blue-700 text-white',
         gold: 'bg-gold-50 text-gold-700',
         'dark-gold': 'bg-gold-700 text-white',
-        orange: 'bg-sandstone-50 text-sandstone-700',
-        'dark-orange': 'bg-sandstone-700 text-white',
-        'success-green': 'bg-success-green-50 text-success-green-700',
-        'success-dark-green': 'bg-success-green-700 text-white',
+        orange: 'bg-orange-50 text-orange-700',
+        'dark-orange': 'bg-orange-700 text-white',
+        'green': 'bg-green-50 text-green-700',
+        'success-dark-green': 'bg-green-700 text-white',
         'warning-yellow': 'bg-warning-yellow-50 text-warning-yellow-700',
         'warning-dark-yellow': 'bg-warning-yellow-700 text-white',
         'error-red': 'bg-error-red-50 text-error-red-700',

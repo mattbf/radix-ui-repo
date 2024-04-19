@@ -6,7 +6,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 const popoverVariants = cva(
-  'z-[9999] overflow-hidden rounded-lg shadow-xl bg-surface-primary border-[0.5px] border-stroke-primary outline-none will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade',
+  'z-[9999] overflow-hidden rounded-lg shadow-xl bg-yellow-50 border-[0.5px] border-gray-400 outline-none will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade',
   {
     variants: {
       variant: {

@@ -146,12 +146,12 @@ const BooksComboxbox = () => {
           <div
             className={cn(
               { hidden: !isOpen },
-              'w-full overflow-hidden bg-surface-primary text-text-foreground',
+              'w-full overflow-hidden bg-yellow-50 text-text-foreground',
             )}
           >
             <div>
               <input
-                className="px-4 py-2 bg-transparent flex flex-row items-center placeholder-text-quaternary w-full rounded-none border-b border-stroke-secondary outline-none tracking-[0.0075rem] leading-[1.45rem] font-[300] text-sm"
+                className="px-4 py-2 bg-transparent flex flex-row items-center placeholder-text-quaternary w-full rounded-none border-b border-gray-300 outline-none tracking-[0.0075rem] leading-[1.45rem] font-[300] text-sm"
                 placeholder="Search Entities"
                 {...getInputProps({
                   onFocus() {
@@ -178,9 +178,9 @@ const BooksComboxbox = () => {
                   return (
                     <li
                       className={cn(
-                        highlightedIndex === i && 'bg-surface-hover',
+                        highlightedIndex === i && 'bg-gray-200',
                         selectedItem === item && 'bg-black-alpha-75',
-                        'cursor-pointer flex items-center rounded-md px-2 h-[2rem] text-sm outline-none transition-colors focus:bg-surface-hover focus:text-text-primary',
+                        'cursor-pointer flex items-center rounded-md px-2 h-[2rem] text-sm outline-none transition-colors focus:bg-gray-200 focus:text-text-primary',
                       )}
                       key={`${item.title}${i}`}
                       {...getItemProps({ item, i })}

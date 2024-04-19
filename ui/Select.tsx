@@ -14,7 +14,7 @@ const selectVariants = cva(
   [
     'gap-x-[0.375rem] pl-[0.75rem] pr-[0.5rem] min-w-[6rem]',
     'flex flex-row items-center overflow-hidden transition-colors text-text-primary  placeholder-text-quaternary tracking-[0.0075rem] leading-[1.45rem] font-[300] text-base py-0 h-[2.5rem] rounded-md border',
-    'focus-within:bg-surface-primary disabled-within:bg-black-alpha-50',
+    'focus-within:bg-yellow-50 disabled-within:bg-black-alpha-50',
   ],
   {
     variants: {
@@ -88,7 +88,7 @@ const Select = React.forwardRef<HTMLSelectElement, DefaultComponentProps>(
             { 'w-full': fullWidth },
             { 'border-error-red-700': error || !!errorMessage },
             {
-              'focus-within:border-evergreen-700 border-stroke-secondary hover:border-stroke-primar hover:focus-within:border-evergreen-700 focus-within:shadow-[0_0px_0px_1px_#3E7B52] hover:focus-within:shadow-[0_0px_0px_1px_#3E7B52]':
+              'focus-within:border-lime-700 border-gray-300 hover:border-stroke-primar hover:focus-within:border-lime-700 focus-within:shadow-[0_0px_0px_1px_#3E7B52] hover:focus-within:shadow-[0_0px_0px_1px_#3E7B52]':
                 !error && errorMessage === undefined,
             },
             selectVariants({

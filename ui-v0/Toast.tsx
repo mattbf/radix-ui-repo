@@ -9,7 +9,7 @@ import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/utils';
 
 const toastVariants = cva(
-  'bg-white rounded-lg p-4 min-w-[20.1875rem] p-4 items-center border-[1px] border-stroke-primary shadow-xl transition-all',
+  'bg-white rounded-lg p-4 min-w-[20.1875rem] p-4 items-center border-[1px] border-gray-400 shadow-xl transition-all',
   {
     variants: {
       variant: {
@@ -42,7 +42,7 @@ const toastVariants = cva(
 
 const VARIANT_TO_ICON_COLOR: { [key: string]: string } = {
   default: 'text-text-secondary',
-  success: 'text-success-green-600',
+  success: 'text-green-600',
   warning: 'text-warning-yellow-700',
   error: 'text-error-red-700',
 };

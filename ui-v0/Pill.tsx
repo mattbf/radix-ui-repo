@@ -7,7 +7,7 @@ import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/utils';
 
 const pillGroupVariants = cva(
-  'inline-flex items-center justify-center rounded-md gap-1 p-1 bg-surface-hover shrink-0',
+  'inline-flex items-center justify-center rounded-md gap-1 p-1 bg-gray-200 shrink-0',
   {
     variants: {
       variant: {

@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils';
 
 const inputVariants = cva(
   [
-    'gap-x-[0.375rem] pl-[0.75rem] pr-[0.5rem] min-w-[6rem] caret-evergreen-700',
-    'flex flex-row items-center overflow-hidden transition-colors text-text-primary py-2  border-b focus-within:bg-surface-primary placeholder-text-quaternary disabled-within:bg-black-alpha-50',
+    'gap-x-[0.375rem] pl-[0.75rem] pr-[0.5rem] min-w-[6rem] caret-lime-700',
+    'flex flex-row items-center overflow-hidden transition-colors text-text-primary py-2  border-b focus-within:bg-yellow-50 placeholder-text-quaternary disabled-within:bg-black-alpha-50',
     'text-4xl tracking-[-0.05rem] leading-[2.875rem] font-[400]',
   ],
   {
@@ -78,7 +78,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, DefaultComponentProps>(
             { 'w-full': fullWidth },
             { 'border-error-red-700': error || !!errorMessage },
             {
-              'border-stroke-secondary hover:border-stroke-primary focus-within:border-evergreen-700 hover:focus-within:border-evergreen-700':
+              'border-gray-300 hover:border-gray-400 focus-within:border-lime-700 hover:focus-within:border-lime-700':
                 !error && errorMessage === undefined,
             },
             inputVariants({

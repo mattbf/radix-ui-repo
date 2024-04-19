@@ -12,7 +12,7 @@ const radioItemVariants = cva('flex items-center space-x-3 w-full', {
   variants: {
     variant: {
       default: '',
-      card: 'p-[1.5rem] border border-stroke-secondary rounded-md',
+      card: 'p-[1.5rem] border border-gray-300 rounded-md',
     },
     size: {
       sm: '',
@@ -25,7 +25,7 @@ const radioItemVariants = cva('flex items-center space-x-3 w-full', {
   },
 });
 const radioCircleVariants = cva(
-  'peer aspect-square rounded-full border-2 border-evergreen-700 text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+  'peer aspect-square rounded-full border-2 border-lime-700 text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -76,7 +76,7 @@ const RadioGroupItem = React.forwardRef<
   ) => (
     <div
       className={cn(radioItemVariants({ variant, className }), {
-        'shadow-[0_0px_0px_1px_#3E7B52] border-evergreen-700': checked,
+        'shadow-[0_0px_0px_1px_#3E7B52] border-lime-700': checked,
       })}
     >
       <RadioGroupPrimitive.Item
@@ -85,7 +85,7 @@ const RadioGroupItem = React.forwardRef<
         {...props}
         id={id}
       >
-        <RadioGroupPrimitive.Indicator className="flex items-center justify-center text-evergreen-700 fill-evergreen-700">
+        <RadioGroupPrimitive.Indicator className="flex items-center justify-center text-lime-700 fill-lime-700">
           <Circle size={16.25} weight="fill" />
         </RadioGroupPrimitive.Indicator>
       </RadioGroupPrimitive.Item>

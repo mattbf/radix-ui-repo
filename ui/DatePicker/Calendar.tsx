@@ -43,19 +43,19 @@ function Calendar({
         head_cell:
           'text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]',
         row: 'flex w-full mt-2',
-        cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:!bg-[#2E2E1F]/[0.01] [&:has([aria-selected])]:bg-surface-hover first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
-        day: 'text-text-primary shadow-none h-9 w-9 p-0 font-normal aria-selected:opacity-100 border-2 border-transparent hover:border-evergreen-600 hover:bg-evergreen-600/20 hover:rounded-md hover:text-black',
+        cell: 'h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:!bg-[#2E2E1F]/[0.01] [&:has([aria-selected])]:bg-gray-200 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
+        day: 'text-text-primary shadow-none h-9 w-9 p-0 font-normal aria-selected:opacity-100 border-2 border-transparent hover:border-lime-600 hover:bg-lime-600/20 hover:rounded-md hover:text-black',
         day_range_end: 'day-range-end aria-selected:text-white',
         day_range_start: 'aria-selected:text-white',
         day_selected:
-          'bg-evergreen-700 border-transparent hover:bg-evergreen-700 hover:border-white/20 hover:bg-evergreen-700 hover:text-white focus:bg-evergreen-700 focus:text-white aria-selected:bg-evergreen-700 aria-selected:rounded-md aria-selected:text-white',
+          'bg-lime-700 border-transparent hover:bg-lime-700 hover:border-white/20 hover:bg-lime-700 hover:text-white focus:bg-lime-700 focus:text-white aria-selected:bg-lime-700 aria-selected:rounded-md aria-selected:text-white',
         day_today:
           'bg-tomato-700 rounded-full text-white day-outside:bg-[#2E2E1F]/[0.06]',
         day_outside:
           'day-outside text-black opacity-50 aria-selected:!bg-[#2E2E1F]/[0.01] aria-selected:text-muted-foreground aria-selected:opacity-30',
         day_disabled: 'text-black opacity-50 bg-[#2E2E1F]/[0.06]',
         day_range_middle:
-          'aria-selected:!bg-black-alpha-25 text-black aria-selected:!text-black rounded-[0px] aria-selected:rounded-[0px] aria-selected:hover:rounded-md aria-selected:hover:border-evergreen-600 hover:bg-evergreen-600/20 ',
+          'aria-selected:!bg-black-alpha-25 text-black aria-selected:!text-black rounded-[0px] aria-selected:rounded-[0px] aria-selected:hover:rounded-md aria-selected:hover:border-lime-600 hover:bg-lime-600/20 ',
         day_hidden: 'invisible',
         ...classNames,
       }}
